@@ -4,4 +4,10 @@ Java:
 
 https://www.scaler.com/topics/java/string-in-java/ 
 
-https://www.interviewbit.com/courses/fast-track-java/topics/strings/ 
+https://www.interviewbit.com/courses/fast-track-java/topics/strings/
+
+Python:
+
+https://www.scaler.com/topics/python/strings-in-python/
+
+https://www.interviewbit.com/tutorial/string-implementation-details/  
