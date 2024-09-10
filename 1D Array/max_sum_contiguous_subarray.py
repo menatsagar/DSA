@@ -46,3 +46,6 @@ Explanation 2:
 
  The subarray [4,-1,2,1] has the maximum possible sum of 6. 
 """
+
+
+# Solved using kadane's algo 

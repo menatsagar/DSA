@@ -64,3 +64,31 @@ A + B = [[1+9, 2+9, 3+7],
          [5,   3,  6],   
          [11, 14, 12]].
 """
+
+
+class Solution:
+     def matrix_sum(self, A, B):
+          
+          rows = len(A)
+          cols = len(A[0])
+          ans = [[0] * cols for _ in range(rows)]
+
+
+          for row in range(rows):
+               for col in range(cols):
+                   
+                    ans[row][col] = A[row][col] + B[row][col]
+          return ans               
+    
+A = [[1, 2, 3],   
+     [4, 1, 2],   
+     [7, 8, 9]]  
+
+B = [[9, 9, 7],   
+     [1, 2, 4],   
+     [4, 6, 3]]
+
+    
+s = Solution()
+p = s.matrix_sum(A, B)
+print(p)

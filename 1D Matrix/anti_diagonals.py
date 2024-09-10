@@ -55,3 +55,57 @@ The first anti diagonal of the matrix is [1 ], the rest spaces shoud be filled w
 The second anti diagonal of the matrix is [2, 4 ], the rest spaces shoud be filled with 0 making the row as [2, 4, 0].
 The third anti diagonal of the matrix is [3, 0, 0 ], the rest spaces shoud be filled with 0 making the row as [3, 0, 0].
 """
+
+class Solution:
+    def anti_diagonals(self, mat):
+        rows = cols = len(mat)
+        ans = [[0] * cols for _ in range(2*rows -1)]
+
+        for col  in range(cols):
+            row = 0
+            temp  = [0] * rows
+            temp[row] = mat[row][col]
+
+            c = col
+            r = row
+            i = 0
+
+            while c > 0 and r < rows:
+                r+=1
+                c-=1
+                i+=1
+                temp[i] =  mat[r][c]
+                
+            ans[col] = temp
+
+        count = cols
+        for row in range(1, rows):
+                col = cols-1
+                temp  = [0] * rows
+                temp[0] = mat[row][col]
+
+                c = col
+                r = row
+                i = 0
+                
+                while r > 0 and c < cols:
+                    c+=1
+                    r-=1
+                    i+=1
+                    temp[i] =  mat[r][c]
+                    
+                ans[count] = temp
+                count+=1
+            
+        
+        
+    
+
+
+A = [[1, 2, 3],   
+     [4, 5, 6],   
+     [7, 8, 9]]  
+
+s = Solution()
+p = s.anti_diagonals(A)
+print(p)

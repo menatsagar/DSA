@@ -57,3 +57,41 @@ Explanation 2:
 
 No water is trapped.
 """
+
+
+from typing import List
+
+
+class Solution:
+    def trap(self, height: List[int]) -> int:
+       
+        n = len(height)
+
+        left_suffix = [0] * n
+        right_suffix = [0] * n
+
+        left_suffix[0] = -1
+        right_suffix[n-1] = -1
+    
+        rain_water = 0
+
+        for i in range(1, n):
+            left_suffix[i] = max(height[i-1], left_suffix[i-1])
+
+        for i in range(n-2, -1, -1):
+            right_suffix[i] = max(height[i+1], right_suffix[i+1])
+
+
+        for i in range(1, n-1):
+            min_val = min(left_suffix[i], right_suffix[i])
+            if height[i] < min_val:
+                rain_water += (min_val-height[i])
+        
+        return rain_water
+
+
+A =  A = [1,2]
+        
+s = Solution()
+p = s.trap(A)
+print(p)
