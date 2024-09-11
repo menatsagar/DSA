@@ -1,12 +1,4 @@
 """
-3. Minor Diagonal Sum
-Solved
-feature icon
-Get your doubts resolved blazing fast with Chat GPT Help
-Check Chat GPT
-feature icon
-Using hints except Complete Solution is Penalty free now
-Use Hint
 Problem Description
 You are given a N X N integer matrix. You have to find the sum of all the minor diagonal elements of A.
 
@@ -60,11 +52,26 @@ Explanation 2:
 
  A[1][2] + A[2][1] = 2 + 2 = 4
 
-
-
-Expected Output
-Provide sample input and click run to see the correct output for the provided input. Use this to improve your problem understanding and test edge cases
-Arg 1: Multi Dimensional Array with Integers, For e.g [[2,3,6,7],[2,3,4,5]]
-
-
 """
+
+
+class Solution:
+    def minor_diagonal_sum(self, mat):
+        n = len(mat)
+        total_sum = 0
+
+        for i in range(n):
+
+            total_sum+=mat[i][n-i-1]
+        return total_sum
+    
+A = [[1, -2, -3],
+      [-4, 5, -6],
+      [-7, -8, 9]]
+
+B = [[3, 2],
+      [2, 3]]
+
+s = Solution()
+p = s.minor_diagonal_sum(B)
+print(p)

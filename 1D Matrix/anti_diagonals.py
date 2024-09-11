@@ -63,48 +63,44 @@ class Solution:
 
         for col  in range(cols):
             row = 0
-            temp  = [0] * rows
-            temp[row] = mat[row][col]
+            temp  = [0] * cols
+            temp[0] = mat[row][col]
 
             c = col
             r = row
             i = 0
 
-            while c > 0 and r < rows:
+            while c >= 0 and r < rows:
+                temp[i] = mat[r][c]
+                i+=1
                 r+=1
                 c-=1
-                i+=1
-                temp[i] =  mat[r][c]
+                
                 
             ans[col] = temp
 
-        count = cols
+        i = cols
+
         for row in range(1, rows):
-                col = cols-1
-                temp  = [0] * rows
-                temp[0] = mat[row][col]
-
-                c = col
-                r = row
-                i = 0
-                
-                while r > 0 and c < cols:
-                    c+=1
-                    r-=1
-                    i+=1
-                    temp[i] =  mat[r][c]
-                    
-                ans[count] = temp
-                count+=1
+            col = cols-1
+            temp  = [0] * cols
             
-        
-        
-    
+            r = row
+            c = col
+            j = 0
+            while c>=0 and r<rows:
+                temp[j] = mat[r][c]
+                r+=1
+                c-=1
+                j+=1
+            ans[i] = temp
+            i+=1
+        return ans
 
-
-A = [[1, 2, 3],   
-     [4, 5, 6],   
-     [7, 8, 9]]  
+A =[[1, 2, 3, 4],   
+    [5, 6, 7, 8],   
+    [9, 10,11,12],
+    [13,14,15,16]]  
 
 s = Solution()
 p = s.anti_diagonals(A)

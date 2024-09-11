@@ -55,3 +55,23 @@ Main diagonal elements will be A[0][0] and A[1][1].
 A[1][1] + A[2][2] = 3 + 3 = 6
 
 """
+
+class Solution:
+    def main_diagonal_sum(self, mat):
+        rows = mat[0]
+        cols = mat[1]
+        total = 0
+        i = 2
+        for row in range(rows):
+            for col in range(cols):
+                if row==col:
+                    total+=mat[i]
+                i+=1
+
+        return total 
+
+A = [3, 3, 1, -2, -3, -4, 5, -6, -7, -8, 9]
+B = [2, 2, 3, 2, 2, 3]
+s = Solution()
+p = s.main_diagonal_sum(B)
+print(p)         

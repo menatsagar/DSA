@@ -51,3 +51,27 @@ Explanation 2:
 
 After transposing the matrix, A becomes [[1, 1, 1], [2, 2, 2]]
 """
+
+from typing import List
+
+
+class Solution:
+    def transpose(self, matrix: List[List[int]]) -> List[List[int]]:
+        rows = len(matrix)
+        cols = len(matrix[0])
+
+        transpose = [[0]*rows for _ in range(cols)]
+      
+
+        for col in range(cols):
+            for row in range(rows):
+                transpose[col][row] = matrix[row][col]
+
+
+        return transpose
+A = [
+     [1,2,3],[4,5,6], [7,8,9]
+    ]
+s = Solution()
+p = s.transpose(A)
+print(p)

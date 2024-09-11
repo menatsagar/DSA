@@ -79,3 +79,39 @@ There are 1 lines in the input
 
 Line 1 ( Corresponds to arg 1 ) : 2 D array. First 2 integers R, C are the number of rows and columns. Then R * C integers follow corresponding to the rowwise numbers in the 2D array
 """
+
+from typing import List
+class Solution:
+    def rotate(self, matrix: List[List[int]]) -> None:
+         n = len(matrix)
+         
+         for row in range(n):
+              col = row
+              while col < n:
+                    if row != col:
+                       temp = matrix[row][col]
+                       matrix[row][col] = matrix[col][row]
+                       matrix[col][row] = temp    
+                    col+=1
+
+         for row in range(n):
+              start = 0
+              end = n-1
+              while start<end:
+                   temp = matrix[row][start]
+                   matrix[row][start] = matrix[row][end]
+                   matrix[row][end] = temp
+                   start+=1
+                   end-=1
+         return matrix         
+
+s=Solution()
+A= [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+ ]
+
+p = s.rotate(A)
+print(p)
+

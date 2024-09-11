@@ -45,3 +45,29 @@ Column 2 = 2+6+2 = 10
 Column 3 = 3+7+3 = 13
 Column 4 = 4+8+4 = 16
 """
+
+class Solution:
+    def column_sum(self, mat):
+
+        rows = len(mat)
+        cols = len(mat[0])
+        ans = [0]* cols
+        i = 0
+
+        for col in range(cols):
+            col_sum = 0
+            for row in range(rows):
+                col_sum+= mat[row][col]
+
+            ans[i] = col_sum
+            i+=1
+
+        return ans
+
+A= [[1,2,3],
+[5,6,7],
+[9,2,3]]
+
+s = Solution()
+p = s.column_sum(A)
+print(p)         
