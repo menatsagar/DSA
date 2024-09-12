@@ -74,3 +74,6 @@ Enter Input Here
 Arg 2: A single Integer, For e.g 9
 Enter Input Here
 """
+
+
+# Just Simple two loop approach and mulitiply
