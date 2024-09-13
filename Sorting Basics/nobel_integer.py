@@ -25,6 +25,7 @@ Input 1:
  A = [3, 2, 1, 3]
 Input 2:
 
+
  A = [1, 1, 3, 3]
 
 
@@ -37,3 +38,19 @@ Output 2:
  -1
 
 """
+
+class Solution:
+    def nobel_interger(self, arr):
+        arr = sorted(arr, reverse=True)
+        n = len(arr)
+
+        for i in range(n):
+
+            if i==arr[i]:
+                return 1
+        return 0
+
+
+s = Solution()
+p = s.nobel_interger([3,2,1,3])
+print(p)

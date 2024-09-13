@@ -40,3 +40,19 @@ Output 2:
 
  5
 """
+
+class Solution:
+    
+    def min_cost(self, arr):
+        n = len(arr)
+        runsum = 0
+        ans = 0
+        arr= sorted(arr)
+        for i in range(n):
+            ans += runsum+arr[i]
+            runsum+=arr[i]
+        return ans
+
+s = Solution()
+p = s.min_cost([5,1,2,3])
+print(p)

@@ -1,5 +1,3 @@
 https://www.quora.com/In-computer-programming-why-is-sorting-important-When-are-the-sorting-algorithms-used-in-real-coding/answer/Pablo-Halpern
-
-
 https://www.scaler.com/topics/sorted-function-in-python/ 
 https://docs.python.org/3/howto/sorting.html

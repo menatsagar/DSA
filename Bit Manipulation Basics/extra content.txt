@@ -18,7 +18,10 @@ Ref - https://medium.com/swlh/the-number-system-80e64e7bcb21
 
 
 Why does the computer understand only Binary ?
-Computers use binary to store data. Not only because it's a reliable way of storing the data, but computers only understand 1s and 0s - binary. A computer's main memory consists of transistors that switch between high and low voltage levels - sometimes 5V, sometimes 0. That reading is done by the computer's processor which reads the transistor state - high or low - to control the computer's other devices, according to software instructions.
+Computers use binary to store data. Not only because it's a reliable way of storing the data, but computers only understand 1s and 0s - binary. 
+A computer's main memory consists of transistors that switch between high and low voltage levels - sometimes 5V, sometimes 0. 
+That reading is done by the computer's processor which reads the transistor state - high or low - to control the computer's other devices, 
+according to software instructions.
 
 
 

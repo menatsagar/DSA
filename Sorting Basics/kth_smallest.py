@@ -55,3 +55,22 @@ Explanation 2:
 
  2nd element after sorting is 2.
 """
+
+
+
+class solution:
+
+    def bth_largest(self, arr, b):
+        n  = len(arr)
+
+        arr = sorted(arr)
+
+        ans = arr[b-1]
+        return ans
+
+A = [2, 1, 4, 3, 2]
+B = 3
+
+s = solution()
+p = s.bth_largest(A, B)
+print(p)

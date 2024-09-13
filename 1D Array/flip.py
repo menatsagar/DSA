@@ -56,16 +56,33 @@ No operation can give us more than three 1s in final string. So, we return empty
 import math
 class Solution:
 
-    def flip(self, A):
+      def flip(self, A):
         n = len(A)
-        max_streak = -math.inf
+        curr_sum, max_sum, curr_l,l, r, i = 0, -1, 0,-1,-1,0
 
         for i in range(n):
-            bit = A[i]
-
-            if bit == "1" :
-                pass
-            elif bit == "0" :
-                pass
+            
+            if A[i]=="0":
+                curr_sum+=1
             else:
-                pass
+                curr_sum-=1
+
+            if curr_sum <0:
+                curr_sum = 0
+                curr_l = i+1
+                continue
+            
+            if curr_sum>max_sum:
+                max_sum = curr_sum
+                l=curr_l
+                r = i
+
+        if l == -1 and r == -1 :
+            return []
+        return [l+1, r+1]
+        
+s = Solution()
+p = s.flip("000100010010100001000000111110000111100000000101010101000100111000001")
+print(p)
+
+

@@ -26,7 +26,7 @@ Return 1 if the array can be rearranged to form an arithmetic progression, other
 Example Input
 Input 1:
 
- A = [3, 5, 1]
+ A = [3, 5, 7]
 Input 2:
 
  A = [2, 4, 1]
@@ -49,3 +49,25 @@ Explanation 2:
 
  There is no way to reorder the elements to obtain an arithmetic progression.
 """
+
+class Solution:
+    
+    def can_form_arithmatic_progression(self, arr):
+        n = len(arr)
+
+        if n<=2:
+            return 1
+        
+        d = arr[1]-arr[0]
+
+        for i in range(2, n):
+            
+            if arr[i]-arr[i-1] !=d:
+                return 0
+            
+        return 1
+    
+
+s = Solution()
+p = s.can_form_arithmatic_progression([3,5,7])
+print(p)
