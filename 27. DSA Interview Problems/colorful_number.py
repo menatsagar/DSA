@@ -63,3 +63,27 @@ Explanation 2:
  236 -> 36  (product of digits)
  This number is not a COLORFUL number since the product sequence 23  and sequence 6 is same. 
 """
+
+
+class Solution:
+    def colorful_number(self, num):
+
+        arr = []
+        while num>0:
+            d = num % 10
+            arr.append(d)
+            num //=10
+
+        prod = arr[len(arr)-1]
+
+        for i in range(len(arr)-2, -1, -1):
+            prod *= arr[i]
+
+            if prod in arr:
+                return False
+        
+        return True
+    
+s = Solution()
+p = s.colorful_number(23)
+print(p)

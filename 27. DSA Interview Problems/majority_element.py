@@ -38,3 +38,11 @@ For Input 1:
 For Input 2:
  1 is the only element in the array, so it is majority
 """
+
+from typing import List
+
+
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        count = 0
+    
